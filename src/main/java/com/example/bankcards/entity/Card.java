@@ -1,6 +1,7 @@
 package com.example.bankcards.entity;
 
 import com.example.bankcards.entity.enums.CardStatus;
+import com.example.bankcards.util.AttributeEncryptor;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Convert(converter = AttributeEncryptor.class)
     @Column(name = "card_number", nullable = false, unique = true)
     private String cardNumber;
 

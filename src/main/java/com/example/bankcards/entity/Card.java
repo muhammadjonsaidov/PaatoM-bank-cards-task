@@ -12,11 +12,11 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class Card {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Karta raqami shifrlangan holda saqlanadi
     @Column(name = "card_number", nullable = false, unique = true)
     private String cardNumber;
 
